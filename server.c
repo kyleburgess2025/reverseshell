@@ -13,7 +13,7 @@
 #include <fcntl.h>
 #include <sys/sendfile.h>
 
-#define PORT_NUMBER     15151
+#define PORT_NUMBER     15213
 #define SERVER_ADDRESS  "127.0.0.1"
 #define FILE_TO_SEND    "/home/ubuntu/capybara.png"
 
