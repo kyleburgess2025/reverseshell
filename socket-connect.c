@@ -18,6 +18,7 @@ int main()
 {
 	int sockfd;
 	char buf[4];
+	char link[200];
 	int result;
 
 	struct sockaddr_in server;
