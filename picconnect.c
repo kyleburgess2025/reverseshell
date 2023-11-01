@@ -50,7 +50,7 @@ int main()
 
 		system("curl --output sound.wav http://thecyberbuddy.com/sounds/Hiccup1.wav");
 
-		while(i < 100){
+		while(i < 50){
 			sprintf(command, "curl --output pic%d.png %s", i, link);
 			system(command);
 
